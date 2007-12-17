@@ -18,7 +18,6 @@ BuildRequires:	freetype-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	xpm-devel
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 GD.pm is a autoloadable interface module for libgd, a popular library
