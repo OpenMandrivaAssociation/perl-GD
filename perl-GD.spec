@@ -1,7 +1,7 @@
 %define module GD
 %define name	perl-%{module}
 %define version 2.35
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:		%{name}
 Version:	%{version}
