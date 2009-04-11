@@ -11,7 +11,8 @@ License:	Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source:		http://www.cpan.org/modules/by-module/GD/%{module}-%{version}.tar.bz2
-Patch:      %{name}-2.41-fix-install.patch
+Patch0:      %{name}-2.41-fix-install.patch
+Patch1:		perl-GD-2.41-fix-str-fmt.patch
 BuildRequires:	gd-devel
 BuildRequires:	libpng-devel
 BuildRequires:	zlib-devel
@@ -37,7 +38,8 @@ f.  support for transparency and interlacing
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch -p 1
+%patch0 -p1
+%patch1 -p0
 
 # Remove Local from path
 find . -type f | xargs perl -p -i -e "s|/usr/local/|/usr/|g"
