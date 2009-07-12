@@ -1,18 +1,17 @@
-%define module GD
-%define name	perl-%{module}
-%define version 2.43
-%define release %mkrel 1
+%define upstream_name    GD
+%define upstream_version 2.44
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
+
 Summary:	A perl5 interface to Thomas Boutell's gd library
 License:	Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/GD/%{module}-%{version}.tar.bz2
-Patch0:      %{name}-2.41-fix-install.patch
-Patch1:		perl-GD-2.41-fix-str-fmt.patch
+URL:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/GD/%{upstream_name}-%{upstream_version}.tar.gz
+Patch1:		%{name}-2.41-fix-str-fmt.patch
+
 BuildRequires:	gd-devel
 BuildRequires:	libpng-devel
 BuildRequires:	zlib-devel
@@ -20,7 +19,7 @@ BuildRequires:	freetype-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	xpm-devel
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 GD.pm is a autoloadable interface module for libgd, a popular library
@@ -37,8 +36,7 @@ f.  support for transparency and interlacing
 
 
 %prep
-%setup -q -n %{module}-%{version}
-%patch0 -p1
+%setup -q -n %{upstream_name}-%{upstream_version}
 %patch1 -p0
 
 # Remove Local from path
