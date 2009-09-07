@@ -11,6 +11,7 @@ Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/GD/%{upstream_name}-%{upstream_version}.tar.gz
 Patch1:		%{name}-2.41-fix-str-fmt.patch
+Patch2:		skip-jpg-test.diff
 
 BuildRequires:	gd-devel
 BuildRequires:	libpng-devel
@@ -38,6 +39,7 @@ f.  support for transparency and interlacing
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
 %patch1 -p0
+%patch2 -p0
 
 # Remove Local from path
 find . -type f | xargs perl -p -i -e "s|/usr/local/|/usr/|g"
