@@ -1,9 +1,9 @@
 %define upstream_name    GD
-%define upstream_version 2.44
+%define upstream_version 2.45
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 4
+Release:	%mkrel 1
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
 License:	Artistic
