@@ -1,18 +1,16 @@
 %define upstream_name    GD
-%define upstream_version 2.45
+%define upstream_version 2.46
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 4
+Release:	%mkrel 1
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
 License:	Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/GD/%{upstream_name}-%{upstream_version}.tar.gz
-Patch1:		%{name}-2.41-fix-str-fmt.patch
 Patch2:		skip-jpg-test.diff
-
 BuildRequires:	gd-devel
 BuildRequires:	libpng-devel
 BuildRequires:	zlib-devel
@@ -38,15 +36,17 @@ f.  support for transparency and interlacing
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
-%patch1 -p0
 %patch2 -p0
 
 # Remove Local from path
 find . -type f | xargs perl -p -i -e "s|/usr/local/|/usr/|g"
 
 # lib64 fixes, don't add /usr/lib/X11 to linker search path
-perl -pi -e "s|-L/usr/lib/X11||g;s|-L/usr/X11/lib||g;s|-L/usr/lib||g" Makefile.PL
-perl -pi -e "s|(/usr/X11R6)/lib|\1/%{_lib}|g" Makefile.PL
+perl -pi \
+    -e "s|-L/usr/lib/X11||g;" \
+    -e "s|-L/usr/X11/lib||g;" \
+    -e "s|-L/usr/lib||g" \
+    Makefile.PL
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
