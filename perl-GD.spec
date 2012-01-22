@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 3
+Release:	%mkrel 4
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
 License:	Artistic
