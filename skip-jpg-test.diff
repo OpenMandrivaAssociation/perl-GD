@@ -1,0 +1,11 @@
+--- t/GD.t.tv	2009-09-07 11:27:45.000000000 +0200
++++ t/GD.t	2009-09-07 11:28:15.000000000 +0200
+@@ -75,7 +74,7 @@
+   print "not ok ",9,"\n";
+ }
+ 
+-if (GD::Image->can('newFromJpeg')) {
++if (GD::Image->can('DO_NOTHING')) {
+   compare(test10('frog.jpg'),10);
+ } else {
+   print "ok ",10," # Skip, no JPEG support\n";
