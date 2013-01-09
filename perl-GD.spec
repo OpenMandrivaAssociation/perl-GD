@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 4
+Release:	5
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
 License:	Artistic
@@ -18,7 +18,7 @@ BuildRequires:	freetype-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	xpm-devel
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-JSON-PP
 
 %description
 GD.pm is a autoloadable interface module for libgd, a popular library
@@ -58,14 +58,9 @@ perl -pi \
 %endif
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean 
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc ChangeLog README README.QUICKDRAW README.unix demos
 %{perl_vendorarch}/GD*
 %{perl_vendorarch}/auto/GD*
