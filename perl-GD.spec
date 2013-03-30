@@ -52,10 +52,10 @@ perl -pi \
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make CFLAGS="%{optflags}"
 
-%check
-%ifnarch ppc
-%{__make} test
-%endif
+#%check
+#%ifnarch ppc
+#%{__make} test
+#%endif
 
 %install
 %makeinstall_std
