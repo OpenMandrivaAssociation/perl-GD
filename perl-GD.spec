@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	6
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
 License:	Artistic
@@ -15,7 +15,7 @@ BuildRequires:	gd-devel
 BuildRequires:	libpng-devel
 BuildRequires:	zlib-devel
 BuildRequires:	freetype-devel
-BuildRequires:	libjpeg-devel
+BuildRequires:	jpeg-devel
 BuildRequires:	xpm-devel
 BuildRequires:	perl-devel
 BuildRequires:	perl-JSON-PP
