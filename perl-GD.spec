@@ -1,5 +1,5 @@
 %define modname	GD
-%define modver 2.51
+%define modver 2.52
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
 Name:		perl-%{modname}
@@ -66,6 +66,7 @@ perl -pi \
 %{_bindir}/bdf2gdfont.pl
 %{_mandir}/man1/*
 %{_mandir}/man3/*
+
 
 
 
