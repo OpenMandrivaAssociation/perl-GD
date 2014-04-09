@@ -1,14 +1,15 @@
 %define modname	GD
-%define modver 2.52
+%define modver 2.53
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
+
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
 Release:	1
 License:	Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/GD/GD-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/%{modname}/%{modname}-%{modver}.tar.gz
 Patch2:		skip-jpg-test.diff
 BuildRequires:	gd-devel
 BuildRequires:	jpeg-devel
@@ -66,6 +67,7 @@ perl -pi \
 %{_bindir}/bdf2gdfont.pl
 %{_mandir}/man1/*
 %{_mandir}/man3/*
+
 
 
 
