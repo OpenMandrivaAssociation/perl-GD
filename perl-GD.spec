@@ -5,7 +5,7 @@ Summary:	A perl5 interface to Thomas Boutell's gd library
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	5
+Release:	6
 License:	Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
