@@ -3,5 +3,6 @@ removed_sources:
   GD-2.50.tar.gz: 6541040ddf5d31da71ec73e94b2d94fa0df8b8d3
   GD-2.51.tar.gz: e0a2f06cb470fd6e1dd8967195de020c79867668
   GD-2.52.tar.gz: ea4f9fa7bf3d013dad3879ce23b8c822e49c8481
-sources:
   GD-2.53.tar.gz: 46221f08f221900bb5396c3ba47e4dfe9c04b846
+sources:
+  GD-2.56.tar.gz: 43bbd4896cb4e2071f5ac467455bc55910269603
