@@ -19,6 +19,7 @@ BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:	perl(ExtUtils::PkgConfig)
 
 %description
 GD.pm is a autoloadable interface module for libgd, a popular library
