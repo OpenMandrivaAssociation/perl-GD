@@ -5,11 +5,13 @@ Summary:	A perl5 interface to Thomas Boutell's gd library
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	1
+Release:	2
 License:	Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/%{modname}/%{modname}-%{modver}.tar.gz
+Patch0:	GD-2.56-utf8.patch
+Patch1:	GD-2.64-cflags.patch
 BuildRequires:	gd-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	perl-devel
@@ -46,6 +48,7 @@ perl -pi \
     -e "s|-L/usr/X11/lib||g;" \
     -e "s|-L/usr/lib||g" \
     Makefile.PL
+perl -pi -e "s|(/usr/X11R6)/lib|\1/%{_lib}|g" Build.PL
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
