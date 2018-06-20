@@ -37,7 +37,7 @@ e.  horizontal and vertical text rendering
 f.  support for transparency and interlacing
 
 %prep
-%autosetup -p1 -n %{modname}-%{modver}
+%autosetup -p0 -n %{modname}-%{modver}
 
 # Remove Local from path
 find . -type f | xargs perl -p -i -e "s|/usr/local/|/usr/|g"
