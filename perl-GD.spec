@@ -15,6 +15,7 @@ BuildRequires:	jpeg-devel
 BuildRequires:	perl-devel
 BuildRequires:	perl-JSON-PP
 BuildRequires:	pkgconfig(freetype2)
+BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(zlib)
