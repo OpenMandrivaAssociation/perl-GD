@@ -5,7 +5,7 @@ Summary:	A perl5 interface to Thomas Boutell's gd library
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	2
+Release:	3
 License:	Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -21,6 +21,8 @@ BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:	pkgconfig(libtiff-4)
+BuildRequires:	pkgconfig(libwebp)
 BuildRequires:	perl(ExtUtils::PkgConfig)
 
 %description
