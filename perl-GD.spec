@@ -1,14 +1,14 @@
 %define modname	GD
-%define modver 2.68
+%define modver 2.69
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	4
+Release:	1
 License:	Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		http://metacpan.org/pod/GD
 Source0:	http://www.cpan.org/modules/by-module/%{modname}/%{modname}-%{modver}.tar.gz
 Patch0:	GD-2.56-utf8.patch
 Patch1:	GD-2.64-cflags.patch
