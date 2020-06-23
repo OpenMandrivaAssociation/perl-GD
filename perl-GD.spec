@@ -1,5 +1,5 @@
 %define modname	GD
-%define modver 2.69
+%define modver 2.71
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
 
@@ -12,8 +12,8 @@ Url:		http://metacpan.org/pod/GD
 Source0:	http://www.cpan.org/modules/by-module/%{modname}/%{modname}-%{modver}.tar.gz
 Patch0:	GD-2.56-utf8.patch
 Patch1:	GD-2.64-cflags.patch
-BuildRequires:	gd-devel
-BuildRequires:	jpeg-devel
+BuildRequires:	pkgconfig(gdlib)
+BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	perl-devel
 BuildRequires:	perl-JSON-PP
 BuildRequires:	pkgconfig(freetype2)
@@ -54,7 +54,7 @@ perl -pi -e "s|(/usr/X11R6)/lib|\1/%{_lib}|g" Build.PL
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
-%make CFLAGS="%{optflags}"
+%make_build CFLAGS="%{optflags}"
 
 #%check
 #%ifnarch ppc
@@ -62,7 +62,7 @@ perl -pi -e "s|(/usr/X11R6)/lib|\1/%{_lib}|g" Build.PL
 #%endif
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc ChangeLog README README.QUICKDRAW demos
