@@ -10,8 +10,8 @@ License:	Artistic
 Group:		Development/Perl
 Url:		http://metacpan.org/pod/GD
 Source0:	http://www.cpan.org/modules/by-module/%{modname}/%{modname}-%{modver}.tar.gz
-Patch0:	GD-2.56-utf8.patch
-Patch1:	GD-2.64-cflags.patch
+Patch0:		GD-2.56-utf8.patch
+Patch1:		https://src.fedoraproject.org/rpms/perl-GD/raw/master/f/GD-2.70-cflags.patch
 BuildRequires:	pkgconfig(gdlib)
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	perl-devel
@@ -45,16 +45,11 @@ f.  support for transparency and interlacing
 find . -type f | xargs perl -p -i -e "s|/usr/local/|/usr/|g"
 
 # lib64 fixes, don't add /usr/lib/X11 to linker search path
-perl -pi \
-    -e "s|-L/usr/lib/X11||g;" \
-    -e "s|-L/usr/X11/lib||g;" \
-    -e "s|-L/usr/lib||g" \
-    Makefile.PL
-perl -pi -e "s|(/usr/X11R6)/lib|\1/%{_lib}|g" Build.PL
+sed -i  -e "s|-L/usr/lib/X11||g;s|-L/usr/X11/lib||g;s|-L/usr/X11R6/lib||g;s|-L/usr/lib|-L%{_libdir}|g" Makefile.PL
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
-%make_build CFLAGS="%{optflags}"
+perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="%{optflags}"
+%make_build
 
 #%check
 #%ifnarch ppc
