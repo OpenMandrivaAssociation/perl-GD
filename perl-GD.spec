@@ -1,11 +1,11 @@
 %define modname	GD
-%define modver 2.71
+%define modver 2.73
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	2
+Release:	1
 License:	Artistic
 Group:		Development/Perl
 Url:		http://metacpan.org/pod/GD
@@ -48,7 +48,7 @@ find . -type f | xargs perl -p -i -e "s|/usr/local/|/usr/|g"
 sed -i  -e "s|-L/usr/lib/X11||g;s|-L/usr/X11/lib||g;s|-L/usr/X11R6/lib||g;s|-L/usr/lib|-L%{_libdir}|g" Makefile.PL
 
 %build
-perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="%{optflags}"
+echo %{_libdir} |perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="%{optflags}"
 %make_build
 
 #%check
