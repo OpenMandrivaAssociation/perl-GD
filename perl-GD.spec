@@ -1,5 +1,5 @@
 %define modname	GD
-%define modver 2.73
+%define modver 2.76
 
 Summary:	A perl5 interface to Thomas Boutell's gd library
 
