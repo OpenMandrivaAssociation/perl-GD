@@ -1,17 +1,14 @@
 %define modname	GD
-%define modver 2.76
 
-Summary:	A perl5 interface to Thomas Boutell's gd library
+Summary:	A perl5 interface to the gd graphics library
 
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	2
+Version:	2.78
+Release:	1
 License:	Artistic
 Group:		Development/Perl
 Url:		http://metacpan.org/pod/GD
-Source0:	http://www.cpan.org/modules/by-module/%{modname}/%{modname}-%{modver}.tar.gz
-Patch0:		GD-2.56-utf8.patch
-Patch1:		https://src.fedoraproject.org/rpms/perl-GD/raw/master/f/GD-2.70-cflags.patch
+Source0:	http://www.cpan.org/modules/by-module/%{modname}/%{modname}-%{version}.tar.gz
 BuildRequires:	pkgconfig(gdlib)
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	perl-devel
@@ -39,7 +36,7 @@ e.  horizontal and vertical text rendering
 f.  support for transparency and interlacing
 
 %prep
-%autosetup -p0 -n %{modname}-%{modver}
+%autosetup -p0 -n %{modname}-%{version}
 
 # Remove Local from path
 find . -type f | xargs perl -p -i -e "s|/usr/local/|/usr/|g"
