@@ -3,7 +3,7 @@
 Summary:	A perl5 interface to the gd graphics library
 
 Name:		perl-%{modname}
-Version:	2.78
+Version:	2.83
 Release:	1
 License:	Artistic
 Group:		Development/Perl
