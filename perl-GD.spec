@@ -7,7 +7,7 @@ Version:	2.83
 Release:	1
 License:	Artistic
 Group:		Development/Perl
-Url:		http://metacpan.org/pod/GD
+Url:		https://metacpan.org/pod/GD
 Source0:	http://www.cpan.org/modules/by-module/%{modname}/%{modname}-%{version}.tar.gz
 BuildRequires:	pkgconfig(gdlib)
 BuildRequires:	pkgconfig(libjpeg)
