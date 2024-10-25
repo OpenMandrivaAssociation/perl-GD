@@ -4,7 +4,7 @@ Summary:	A perl5 interface to the gd graphics library
 
 Name:		perl-%{modname}
 Version:	2.83
-Release:	1
+Release:	2
 License:	Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/GD
