@@ -9,6 +9,7 @@ License:	Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/GD
 Source0:	http://www.cpan.org/modules/by-module/%{modname}/%{modname}-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	pkgconfig(gdlib)
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	perl-devel
