@@ -3,8 +3,8 @@
 Summary:	A perl5 interface to the gd graphics library
 
 Name:		perl-%{modname}
-Version:	2.83
-Release:	4
+Version:	2.86
+Release:	1
 License:	Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/GD
@@ -38,7 +38,7 @@ e.  horizontal and vertical text rendering
 f.  support for transparency and interlacing
 
 %prep
-%autosetup -p0 -n %{modname}-%{version}
+%autosetup -p0 -n GD-2.86
 
 # Remove Local from path
 find . -type f | xargs perl -p -i -e "s|/usr/local/|/usr/|g"
