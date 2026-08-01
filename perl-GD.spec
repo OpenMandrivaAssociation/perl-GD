@@ -4,13 +4,12 @@ Summary:	A perl5 interface to the gd graphics library
 
 Name:		perl-%{modname}
 Version:	2.86
-Release:	2
+Release:	3
 License:	Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/GD
 Source0:	http://www.cpan.org/modules/by-module/%{modname}/%{modname}-%{version}.tar.gz
 BuildRequires:	make
-BuildRequires:	clang
 BuildRequires:	pkgconfig(gdlib)
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	perl-devel
