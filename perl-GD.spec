@@ -38,7 +38,7 @@ e.  horizontal and vertical text rendering
 f.  support for transparency and interlacing
 
 %prep
-%autosetup -p0 -n GD-2.86
+%autosetup -p0 -n GD-%{version}
 
 # Remove Local from path
 find . -type f | xargs perl -p -i -e "s|/usr/local/|/usr/|g"
